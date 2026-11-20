@@ -1,0 +1,2 @@
+# Optional: the CAD generator and HTML viewer need no third-party packages.
+Pillow>=10.1

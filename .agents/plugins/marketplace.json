@@ -1,0 +1,20 @@
+{
+  "name": "sketch-to-furniture",
+  "interface": {
+    "displayName": "Sketch to Furniture"
+  },
+  "plugins": [
+    {
+      "name": "sketch-to-furniture",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

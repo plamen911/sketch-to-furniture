@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Мебелен проект</title>
+    <style>
+
+      :root{--ink:#193744;--muted:#57717d;--blue:#246d90;--line:#cbd6dc;--paper:#f6f8fa;--warn:#925125}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:15px/1.5 "Avenir Next","Segoe UI",sans-serif}button,input,select{font:inherit}button,a.download{border:1px solid var(--line);border-radius:5px;background:white;color:var(--ink);padding:8px 13px;cursor:pointer;text-decoration:none;display:inline-block}button:hover,a.download:hover{border-color:var(--blue)}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #3a91bc;outline-offset:3px}button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}header{padding:24px 32px 18px;border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:center;justify-content:space-between;background:white}h1{font-size:25px;font-weight:600;letter-spacing:-.6px;line-height:1.2;margin:0 0 6px}h2{font-size:20px;font-weight:600;margin:0 0 14px}h3{font-size:16px;margin:20px 0 8px}p{margin:8px 0}.muted{color:var(--muted)}.status{font-size:13px;color:var(--warn);border-left:3px solid #c48843;padding-left:12px;max-width:350px}.tabs{padding:14px 32px 0;display:flex;gap:8px;flex-wrap:wrap}.tabs button{background:transparent}.tabs button[aria-selected=true]{background:white;border-color:var(--blue);color:var(--blue)}.view{display:none}.view.active{display:block}.studio{display:grid;grid-template-columns:minmax(0,1fr) 310px;margin:16px 32px 28px;background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden}.canvas-wrap{position:relative;min-height:480px;background:#e9eff3;overflow:hidden}canvas{width:100%;height:clamp(480px,calc(100vh - 220px),760px);display:block;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}.canvas-note{position:absolute;left:22px;bottom:16px;font-size:12px;color:#4f6672;pointer-events:none}.canvas-top{position:absolute;left:22px;top:18px;font-size:13px;pointer-events:none}.canvas-top strong{font-size:16px;display:block}.sidebar{padding:22px;border-left:1px solid var(--line);overflow:auto}.segmented{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}.segmented button{font-size:13px;padding:6px 9px}.material-row{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;margin:13px 0}.material-row input{padding:0;border:1px solid var(--line);width:34px;height:34px;border-radius:4px;background:white;cursor:pointer}.material-row small{display:block;color:var(--muted);font-size:11px}.hint{font-size:12px;color:var(--muted)}.wide{width:100%;margin-top:7px}.sidebar label{display:block;margin:14px 0 5px}.sidebar input[type=range]{width:100%}.content{margin:20px 32px 36px;padding:24px;background:white;border:1px solid var(--line);border-radius:8px}.scroll-table{overflow:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:10px 12px;border-bottom:1px solid #e2e8ed;text-align:left;white-space:nowrap}th{font-weight:600;background:#edf2f5}tbody tr:hover{background:#f3f7f9}.board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px;margin-top:20px}.board-card{border:1px solid var(--line);padding:14px}.board-card img{width:100%;height:auto;max-height:600px;object-fit:contain}.board-card h3{margin:0}.downloads{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.source-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.source-grid img{max-width:100%;max-height:850px;object-fit:contain}.issue{padding:12px 16px;border-left:3px solid #c48843;background:#faf5ec;margin:12px 0}.pill{font-size:12px;border:1px solid var(--line);padding:3px 7px;border-radius:3px}.check{color:#26734f}.sr{position:absolute;left:-10000px}#selection{min-height:55px;border-top:1px solid var(--line);padding-top:12px;font-size:12px}details summary{cursor:pointer;font-weight:600}#load-status{font-size:12px;color:var(--blue);min-height:18px}footer{margin:0 32px 20px;font-size:12px;color:var(--muted)}@media(max-width:950px){.studio{grid-template-columns:1fr}.sidebar{border-left:0;border-top:1px solid var(--line)}.canvas-wrap{min-height:520px}canvas{height:520px}.source-grid{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}.status{max-width:none}}@media(max-width:600px){header{padding:20px}.tabs{padding-left:16px}.studio,.content{margin:16px}.content{padding:16px}.canvas-wrap{min-height:440px}canvas{height:440px}h1{font-size:22px}.board-grid{grid-template-columns:1fr}.canvas-note{max-width:220px}}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1 id="title">Мебелен проект</h1>
+        <div id="subtitle" class="muted"></div>
+      </div>
+      <div class="status">
+        Предварителен проект<br />Сглобките, обковът и производствените допуски
+        подлежат на проверка.
+      </div>
+    </header>
+    <nav class="tabs" role="tablist" aria-label="Раздели на проекта">
+      <button
+        role="tab"
+        id="tab-model"
+        aria-controls="model"
+        aria-selected="true"
+        data-tab="model"
+      >
+        3D и материали</button
+      ><button
+        role="tab"
+        id="tab-parts"
+        aria-controls="parts"
+        aria-selected="false"
+        data-tab="parts"
+      >
+        Детайли</button
+      ><button
+        role="tab"
+        id="tab-cutting"
+        aria-controls="cutting"
+        aria-selected="false"
+        data-tab="cutting"
+      >
+        Разкрой</button
+      ><button
+        role="tab"
+        id="tab-cost"
+        aria-controls="cost"
+        aria-selected="false"
+        data-tab="cost"
+      >
+        Материали и цена</button
+      ><button
+        role="tab"
+        id="tab-decisions"
+        aria-controls="decisions"
+        aria-selected="false"
+        data-tab="decisions"
+      >
+        Схема и уточнения
+      </button>
+    </nav>
+    <section
+      class="view active"
+      role="tabpanel"
+      aria-labelledby="tab-model"
+      id="model"
+    >
+      <div class="studio">
+        <div class="canvas-wrap">
+          <div class="canvas-top">
+            <strong id="view-name">Външен изглед</strong
+            ><span id="dimensions"></span>
+          </div>
+          <canvas
+            id="scene"
+            tabindex="0"
+            aria-label="3D модел на мебелта. Стрелки за завъртане; плюс и минус за приближаване."
+          ></canvas>
+          <div class="canvas-note">
+            Завърти с влачене · Приближи с колелцето<br />Цветовете са
+            приблизителни; без проверени текстури.
+          </div>
+        </div>
+        <aside class="sidebar">
+          <h2>Виж проекта</h2>
+          <div class="segmented">
+            <button id="closed" aria-pressed="true">Отвън</button
+            ><button id="inside" aria-pressed="false">Отвътре</button
+            ><button id="front">Отпред</button
+            ><button id="reset">Перспектива</button>
+          </div>
+          <label for="zoom">Приближаване</label
+          ><input
+            id="zoom"
+            type="range"
+            min="0.65"
+            max="1.8"
+            value="1"
+            step="0.05"
+          />
+          <div id="materials"></div>
+          <p class="hint">
+            Промените на цвета са визуални проби. Изтегли параметрите и
+            генерирай отново, за да обновиш CAD файловете.
+          </p>
+          <button class="wide" id="save-image">Запази изглед като PNG</button
+          ><button class="wide" id="save-project">Изтегли параметрите</button>
+          <p id="load-status" role="status"></p>
+          <div id="selection">
+            Избери детайл от таблицата, за да го откроиш.
+          </div>
+          <details>
+            <summary>Какво показва моделът</summary>
+            <p class="hint">
+              Геометрия по крайни размери след кантиране. Скритите фронтове
+              показват вътрешността; това не е симулация на отваряне. Дръжките,
+              лостът и обковът са условни, когато няма избран модел.
+            </p>
+          </details>
+        </aside>
+      </div>
+    </section>
+    <section
+      class="view"
+      role="tabpanel"
+      aria-labelledby="tab-parts"
+      id="parts"
+    >
+      <div class="content">
+        <h2>Списък с детайли</h2>
+        <p class="muted">
+          Крайни размери и размери за рязане след приспадане на канта. U/V са
+          осите на съответния панел, описани в параметрите.
+        </p>
+        <div class="downloads">
+          <a class="download" href="parts.csv" download>Изтегли CSV</a
+          ><a class="download" href="model.dae" download>3D за SketchUp — DAE</a
+          ><a class="download" href="package.zip" download
+            >Всички файлове — ZIP</a
+          >
+        </div>
+        <div class="scroll-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Детайл</th>
+                <th>Материал</th>
+                <th>Деб.</th>
+                <th>Краен U × V</th>
+                <th>За рязане U × V</th>
+                <th>Кант U0/U1/V0/V1</th>
+                <th>Декор</th>
+              </tr>
+            </thead>
+            <tbody id="part-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section
+      class="view"
+      role="tabpanel"
+      aria-labelledby="tab-cutting"
+      id="cutting"
+    >
+      <div class="content">
+        <h2>Разположение върху плочите</h2>
+        <p id="board-summary" class="muted"></p>
+        <div class="issue">
+          Предварителен разкрой. Методът използва прави срезове на ивици и не
+          гарантира минимален брой плочи. Кантовете и посоката на декора без
+          потвърждение са отбелязани в уточненията.
+        </div>
+        <div class="downloads">
+          <a class="download" href="cutting.pdf" target="_blank" rel="noopener"
+            >Разкрой A4 — PDF</a
+          ><a class="download" href="cutting.dxf" download
+            >Редактируем разкрой — DXF</a
+          ><a class="download" href="drawing.dxf" download
+            >Габаритен чертеж — DXF</a
+          >
+        </div>
+        <div class="board-grid" id="boards"></div>
+      </div>
+    </section>
+    <section class="view" role="tabpanel" aria-labelledby="tab-cost" id="cost">
+      <div class="content">
+        <h2>Материали и обков</h2>
+        <p id="cost-status" class="issue"></p>
+        <p id="cost-summary"></p>
+        <p class="muted">
+          Трудът, монтажът, доставката и печалбата остават непопълнени.
+          Непопълнените позиции не са нула. Цените са наблюдения от посочената
+          дата, а не автоматичен поток от магазина.
+        </p>
+        <div class="downloads">
+          <a class="download" href="materials-cost.csv" download
+            >Калкулация — CSV</a
+          ><a class="download" href="materials-cost.json" download
+            >Подробности и източници</a
+          >
+        </div>
+        <div class="scroll-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Позиция</th>
+                <th>Количество</th>
+                <th>Ед. цена</th>
+                <th>Стойност</th>
+                <th>Източник</th>
+                <th>Уточнения</th>
+              </tr>
+            </thead>
+            <tbody id="cost-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section
+      class="view"
+      role="tabpanel"
+      aria-labelledby="tab-decisions"
+      id="decisions"
+    >
+      <div class="content source-grid">
+        <div>
+          <h2>Схема на клиента</h2>
+          <img id="source-image" alt="Оригинална ръчна схема на гардероба" />
+          <p class="hint">
+            Скицата описва замисъла. Потвърдените отговори имат предимство пред
+            приблизителното разположение на линиите.
+          </p>
+        </div>
+        <div>
+          <h2>Решения и допускания</h2>
+          <h3>Потвърдено от клиента</h3>
+          <ul id="confirmed"></ul>
+          <h3>Остава за проверка</h3>
+          <ul id="assumptions"></ul>
+          <h3>Автоматични проверки</h3>
+          <p class="check">
+            Положителни размери · Дебелини по материал · Без застъпване на
+            плътни панели · Всеки включен детайл е разположен веднъж · Граници
+            на плочите и ширина на среза
+          </p>
+          <p class="hint">
+            Тези проверки не доказват здравина, правилен монтаж, работещи панти
+            или водачи.
+          </p>
+          <div class="downloads">
+            <a class="download" href="validation.json" download
+              >Доклад от проверките</a
+            ><a class="download" href="IMPORT.txt" download
+              >Указания за импорт</a
+            >
+          </div>
+          <a id="conversation" target="_blank" rel="noopener"
+            >Отговорите в предишния чат</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer>
+      Furniture CAD · Локален проект · Размери в mm · Без външни библиотеки и
+      изпращане на данни
+    </footer>
+    <script id="project-data" type="application/json">
+      __PROJECT_DATA__
+    </script>
+    <script>
+
+      'use strict';
+      const data=JSON.parse(document.getElementById('project-data').textContent),project=data.project;
+      const $=id=>document.getElementById(id),fmt=n=>Number(n.toFixed(2)).toLocaleString('bg-BG');
+      const money=n=>n.toLocaleString('bg-BG',{style:'currency',currency:'EUR'}),units={board:'плочи',piece:'бр.',pair:'комплекта',set:'комплект',pack:'опаковки',m:'m'};
+      const safe=(tag,text)=>{const e=document.createElement(tag);e.textContent=text;return e};
+      $('title').textContent=project.name;document.title=project.name+' · Furniture CAD';
+      $('subtitle').textContent=project.subtitle||'Редактируем модел, материали и разкрой';
+      if(project.demo){const note=safe('p','Демонстрационен проект. За нова скица използвай снимка и разговор в ChatGPT; тази страница показва вече генерирания пример.');note.className='content';note.style.marginBottom='0';note.style.padding='12px 18px';document.querySelector('nav').before(note)}
+      function switchTab(id){document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===id)));document.querySelectorAll('.view').forEach(e=>e.classList.toggle('active',e.id===id));if(id==='model')requestAnimationFrame(draw)}
+      document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+      for(const [id,m] of Object.entries(project.materials)){const row=document.createElement('label');row.className='material-row';const input=document.createElement('input');input.type='color';input.value=m.color;input.setAttribute('aria-label','Цвят: '+m.name);input.addEventListener('input',()=>{m.color=input.value;draw();$('load-status').textContent='Пробен цвят — CAD файловете остават от последното генериране.'});const label=safe('span',m.name);label.append(safe('small',m.finish_note||'Приблизителен цвят'));row.append(input,label);$('materials').append(row)}
+      for(const p of project.parts){const m=project.materials[p.material],u=p.size_mm[p.panel_axes[0]],v=p.size_mm[p.panel_axes[1]],b=p.bands_mm;const tr=document.createElement('tr');const td=document.createElement('td'),button=safe('button',p.id+' · '+p.name);button.addEventListener('click',()=>{selected=p.id;inside=p.group!=='front';updateMode();switchTab('model');$('selection').textContent=p.name+' · '+fmt(u)+' × '+fmt(v)+' × '+m.thickness_mm+' mm';draw()});td.append(button);tr.append(td);for(const value of [m.name,m.thickness_mm,fmt(u)+' × '+fmt(v),fmt(u-b.u0-b.u1)+' × '+fmt(v-b.v0-b.v1),[b.u0,b.u1,b.v0,b.v1].join(' / '),p.grain==='none'?'Не е ограничен':p.grain.toUpperCase()])tr.append(safe('td',value));$('part-rows').append(tr)}
+      $('board-summary').textContent=data.boards.length+' плочи за материалите с избран складов формат. '+project.parts.filter(p=>!project.materials[p.material].stock).length+' детайла без зададен складов формат са изключени от разкроя.';
+      for(const b of data.boards){const article=document.createElement('article');article.className='board-card';article.append(safe('h3',b.id+' · '+project.materials[b.material].name));article.append(safe('p',b.placements.length+' детайла · '+b.yield_nominal_percent+'% от цялата плоча'));const img=document.createElement('img');img.loading='lazy';img.src=b.id+'.svg';img.alt='Разкрой на '+b.id;article.append(img);$('boards').append(article)}
+      if(data.cost){const c=data.cost;$('cost-status').textContent=c.status==='incomplete'?'Непълна калкулация — има непотвърдени или липсващи позиции.':'Ориентировъчна стойност само на материалите';$('cost-summary').textContent='Остойностена част: '+fmt(c.estimated_priced_subtotal_eur)+' € с ДДС · Проверка: '+c.as_of_date+(c.same_items_regular_price_subtotal_eur!==c.estimated_priced_subtotal_eur?' · Същите позиции без промоцията: '+fmt(c.same_items_regular_price_subtotal_eur)+' €':'');for(const r of c.rows){const tr=document.createElement('tr');tr.append(safe('td',r.label),safe('td',r.quantity===null?'Неуточнено':fmt(r.quantity)+' '+(units[r.unit]||r.unit)),safe('td',r.unit_price_eur===null?'—':money(r.unit_price_eur)),safe('td',r.total_eur===null?'Неостойностено':money(r.total_eur)));const source=document.createElement('td');if(r.source){const a=safe('a',r.supplier+' · '+r.checked_on);a.href=r.source;a.target='_blank';a.rel='noopener';source.append(a)}else source.textContent='—';tr.append(source,safe('td',r.note));$('cost-rows').append(tr)}}else{$('cost-status').textContent='За този проект още няма калкулация.'}
+      for(const [id,items] of [['confirmed',project.confirmed||[]],['assumptions',project.assumptions||[]]])for(const text of items)$(id).append(safe('li',text));
+      if(project.source_image)$('source-image').src=project.source_image;else $('source-image').hidden=true;
+      if(project.source_conversation)$('conversation').href=project.source_conversation;else $('conversation').hidden=true;
+      const canvas=$('scene'),ctx=canvas.getContext('2d');let yaw=-.48,pitch=.16,zoom=1,inside=false,selected=null;
+      let drag=null,moved=false;
+      const partBounds=project.parts.concat(project.fittings||[]);
+      const lo=[0,1,2].map(k=>Math.min(...partBounds.map(p=>p.origin_mm[k]))),hi=[0,1,2].map(k=>Math.max(...partBounds.map(p=>p.origin_mm[k]+p.size_mm[k]))),center=lo.map((v,k)=>(v+hi[k])/2);
+      $('dimensions').textContent=(project.design_bounds_mm?project.design_bounds_mm.max.map((v,k)=>fmt(v-project.design_bounds_mm.min[k])).join(' × ')+' mm · ширина × дълбочина × височина':hi.map((v,k)=>fmt(v-lo[k])).join(' × ')+' mm (X × Y × Z)')+(project.fittings?.some(p=>p.origin_mm[1]<0)?' · дръжките са допълнително':'');
+      const faces=[[0,3,2,1],[4,5,6,7],[0,1,5,4],[3,7,6,2],[0,4,7,3],[1,2,6,5]];
+      function verts(p){const [x,y,z]=p.origin_mm,[w,d,h]=p.size_mm;return [[x,y,z],[x+w,y,z],[x+w,y+d,z],[x,y+d,z],[x,y,z+h],[x+w,y,z+h],[x+w,y+d,z+h],[x,y+d,z+h]]}
+      function partMesh(p){if(p.shape!=='cylinder')return {vertices:verts(p),faces};const axis=p.axis,other=[0,1,2].filter(k=>k!==axis);if(axis===1)other.reverse();const vertices=[],polygons=[],n=24;for(let end=0;end<2;end++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,q=[...p.origin_mm];q[axis]+=end*p.size_mm[axis];other.forEach((k,j)=>q[k]+=p.size_mm[k]/2*(1+(j?Math.sin(a):Math.cos(a))));vertices.push(q)}polygons.push(Array.from({length:n},(_,i)=>n-1-i),Array.from({length:n},(_,i)=>n+i));for(let i=0;i<n;i++){const j=(i+1)%n;polygons.push([i,j,j+n,i+n])}return {vertices,faces:polygons}}
+      function cross(a,b){return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]}function sub(a,b){return a.map((v,i)=>v-b[i])}function dot(a,b){return a.reduce((s,v,i)=>s+v*b[i],0)}function norm(a){const l=Math.hypot(...a);return a.map(v=>v/l)}
+      function rotate(v){const x=v[0]-center[0],y=v[1]-center[1],z=v[2]-center[2];const x1=x*Math.cos(yaw)-y*Math.sin(yaw),y1=x*Math.sin(yaw)+y*Math.cos(yaw);return [x1,z*Math.cos(pitch)+y1*Math.sin(pitch),y1*Math.cos(pitch)-z*Math.sin(pitch)]}
+      function shade(color,light){return '#'+[1,3,5].map(i=>Math.max(0,Math.min(255,Math.round(parseInt(color.slice(i,i+2),16)*light)))).map(v=>v.toString(16).padStart(2,'0')).join('')}
+      function updateMode(){$('closed').setAttribute('aria-pressed',String(!inside));$('inside').setAttribute('aria-pressed',String(inside));$('view-name').textContent=inside?'Вътрешно разпределение':'Външен изглед'}
+      function draw(){if(!$('model').classList.contains('active'))return;const rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);if(rect.width===0)return;canvas.width=Math.round(rect.width*dpr);canvas.height=Math.round(rect.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);const W=rect.width,H=rect.height;ctx.fillStyle='#e9eff3';ctx.fillRect(0,0,W,H);const scale=Math.min((W-130)/(Math.hypot(hi[0]-lo[0],hi[1]-lo[1])),(H-105)/(hi[2]-lo[2]+(hi[1]-lo[1])*.4))*zoom;
+       const projectPoint=v=>{const q=rotate(v);return [W/2+q[0]*scale,H/2-q[1]*scale+10,q[2]]};
+       // Floor, soft contact shadow and wall reference, all tied to the model's dimensions.
+       const floor=[[lo[0]-600,lo[1]-600,0],[hi[0]+600,lo[1]-600,0],[hi[0]+600,hi[1]+600,0],[lo[0]-600,hi[1]+600,0]].map(projectPoint);ctx.beginPath();floor.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.closePath();ctx.fillStyle='#dce5eb';ctx.fill();
+       ctx.save();ctx.filter='blur(15px)';const shadow=[[lo[0]-40,lo[1]-50,0],[hi[0]+60,lo[1]-50,0],[hi[0]+160,hi[1]+100,0],[lo[0]+40,hi[1]+100,0]].map(projectPoint);ctx.beginPath();shadow.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.closePath();ctx.fillStyle='rgba(34,56,70,.22)';ctx.fill();ctx.restore();
+       const display=project.parts.concat(project.fittings||[]).filter(p=>!(inside&&(p.group==='front'||p.hide_with_fronts)));const queue=[];
+       for(const p of display){const mesh=partMesh(p),v=mesh.vertices,q=v.map(projectPoint),m=project.materials[p.material],base=p.color||m?.color||'#7b8285';for(const f of mesh.faces){const a=v[f[0]],b=v[f[1]],c=v[f[2]],n=norm(cross(sub(b,a),sub(c,a)));const rn=[n[0]*Math.cos(yaw)-n[1]*Math.sin(yaw),0,(n[0]*Math.sin(yaw)+n[1]*Math.cos(yaw))*Math.cos(pitch)-n[2]*Math.sin(pitch)];if(rn[2]>=-.00001)continue;const light=.82+.18*Math.max(0,dot(n,norm([-1,-2,3])));queue.push({points:f.map(i=>q[i]),depth:f.reduce((s,i)=>s+q[i][2],0)/f.length,color:shade(base,light),selected:selected===p.id})}}
+       // Per-pixel depth buffer prevents shelves and hardware showing through closed fronts.
+       // Orthographic projection means barycentric interpolation gives exact face depths.
+       const pixels=ctx.getImageData(0,0,canvas.width,canvas.height),buffer=pixels.data;
+       const depth=new Float64Array(canvas.width*canvas.height);depth.fill(Infinity);
+       const width=canvas.width,height=canvas.height;
+       function triangle(a,b,c,color){
+         a=a.map((v,i)=>i<2?v*dpr:v);b=b.map((v,i)=>i<2?v*dpr:v);c=c.map((v,i)=>i<2?v*dpr:v);
+         const denominator=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1]);if(Math.abs(denominator)<1e-9)return;
+         const minX=Math.max(0,Math.floor(Math.min(a[0],b[0],c[0]))),maxX=Math.min(width-1,Math.ceil(Math.max(a[0],b[0],c[0]))),minY=Math.max(0,Math.floor(Math.min(a[1],b[1],c[1]))),maxY=Math.min(height-1,Math.ceil(Math.max(a[1],b[1],c[1])));
+         const rgb=[1,3,5].map(i=>parseInt(color.slice(i,i+2),16));
+         for(let y=minY;y<=maxY;y++)for(let x=minX;x<=maxX;x++){
+           const u=((b[1]-c[1])*(x+.5-c[0])+(c[0]-b[0])*(y+.5-c[1]))/denominator;
+           const v=((c[1]-a[1])*(x+.5-c[0])+(a[0]-c[0])*(y+.5-c[1]))/denominator,w=1-u-v;
+           if(u<-.00001||v<-.00001||w<-.00001)continue;
+           const z=u*a[2]+v*b[2]+w*c[2],offset=y*width+x;
+           if(z<depth[offset]){depth[offset]=z;const index=offset*4;buffer[index]=rgb[0];buffer[index+1]=rgb[1];buffer[index+2]=rgb[2];buffer[index+3]=255}
+         }
+       }
+       for(const f of queue)for(let i=1;i<f.points.length-1;i++)triangle(f.points[0],f.points[i],f.points[i+1],f.selected?'#62b7d6':f.color);
+       // Thin outlines are also depth-tested, rather than painted over nearer panels.
+       for(const f of queue)for(let i=0;i<f.points.length;i++){
+         const a=f.points[i],b=f.points[(i+1)%f.points.length],steps=Math.max(1,Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])*dpr));
+         for(let j=0;j<=steps;j++){const t=j/steps,x=Math.round((a[0]+(b[0]-a[0])*t)*dpr),y=Math.round((a[1]+(b[1]-a[1])*t)*dpr),z=a[2]+(b[2]-a[2])*t;
+           if(x<0||y<0||x>=width||y>=height)continue;const offset=y*width+x;
+           if(z<=depth[offset]+1){const index=offset*4;for(let k=0;k<3;k++)buffer[index+k]=Math.round(buffer[index+k]*.75)}
+         }
+       }
+       ctx.putImageData(pixels,0,0);
+       ctx.font='12px "Avenir Next",sans-serif';ctx.fillStyle='#57717d';ctx.textAlign='right';ctx.fillText('mm · Предварителен модел',W-20,H-20);
+      }
+      $('closed').addEventListener('click',()=>{inside=false;selected=null;updateMode();draw()});$('inside').addEventListener('click',()=>{inside=true;selected=null;updateMode();draw()});$('front').addEventListener('click',()=>{yaw=0;pitch=0;draw()});$('reset').addEventListener('click',()=>{yaw=-.48;pitch=.16;zoom=1;$('zoom').value=zoom;draw()});$('zoom').addEventListener('input',e=>{zoom=+e.target.value;draw()});
+      canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];moved=false;canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];yaw+=dx*.007;pitch=Math.max(-.6,Math.min(.65,pitch+dy*.005));drag=[e.clientX,e.clientY];moved=true;draw()});canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointercancel',()=>drag=null);canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.65,Math.min(1.8,zoom-e.deltaY*.001));$('zoom').value=zoom;draw()},{passive:false});canvas.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','-','='].includes(e.key))return;e.preventDefault();if(e.key==='ArrowLeft')yaw-=.1;if(e.key==='ArrowRight')yaw+=.1;if(e.key==='ArrowUp')pitch=Math.min(.65,pitch+.05);if(e.key==='ArrowDown')pitch=Math.max(-.6,pitch-.05);if(e.key==='+'||e.key==='=')zoom=Math.min(1.8,zoom+.1);if(e.key==='-')zoom=Math.max(.65,zoom-.1);$('zoom').value=zoom;draw()});
+      function download(blob,name){const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download=name;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),1000)}
+      $('save-image').addEventListener('click',()=>{canvas.toBlob(blob=>{if(blob)download(blob,inside?'interior.png':'exterior.png')});$('load-status').textContent='Запазен е текущият изглед с обозначение за предварителен модел.'});$('save-project').addEventListener('click',()=>download(new Blob([JSON.stringify(project,null,2)],{type:'application/json'}),'project.json'));
+      new ResizeObserver(draw).observe(canvas.parentElement);draw();
+    </script>
+  </body>
+</html>

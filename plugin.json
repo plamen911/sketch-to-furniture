@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sketch-to-furniture",
+  "version": "0.2.0",
+  "description": "Turn photographed furniture sketches into reviewable CAD, material previews, cutting plans and sourced material estimates.",
+  "author": {
+    "name": "Plamen Markov",
+    "url": "https://plamen.lynxlake.org/"
+  },
+  "repository": "https://github.com/plamen911/sketch-to-furniture",
+  "license": "MIT",
+  "keywords": [
+    "furniture",
+    "cad",
+    "cutting",
+    "agent-skills"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Sketch to Furniture",
+        "shortDescription": "Furniture sketches to CAD, previews and cutting plans",
+        "developerName": "Plamen Markov",
+        "category": "Productivity",
+        "websiteURL": "https://plamen.lynxlake.org/"
+      }
+    }
+  }
+}
