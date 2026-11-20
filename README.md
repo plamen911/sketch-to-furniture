@@ -70,6 +70,8 @@ Open the generated `index.html` in a browser. The output directory includes CAD,
 
 The public example is a sanitized reconstruction. Original photos, customer conversations and live working projects are kept out of Git under `projects/`.
 
+Preferred Bulgarian research sources are [Kedar](https://www.kedar-ood.com/) and [ROSI](https://rosi.bg/bg). Prices and textures must match the exact product variant; an unavailable public price remains unquoted.
+
 ## Using it in ChatGPT
 
 The intended interaction is a photo and a conversation, including from a phone. See the [Bulgarian user guide](docs/user-guide-bg.md).

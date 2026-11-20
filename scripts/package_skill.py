@@ -9,7 +9,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.2.0"
+VERSION = (ROOT / "VERSION").read_text().strip()
 RUNTIME_FILES = [
     "furniture.py",
     "costing.py",
@@ -46,6 +46,7 @@ def build():
         shutil.rmtree(folder)  # only generated distribution path
     skill = folder / "skills/sketch-to-furniture"
     skill.mkdir(parents=True)
+    shutil.copyfile(ROOT / "VERSION", skill / "VERSION")
     text = (ROOT / "SKILL.md").read_text()
     text = text.replace(
         "For this development task that is `/Applications/MAMP/htdocs/ai/skills/sketch-to-furniture/`. ",
@@ -64,7 +65,7 @@ def build():
     shutil.copyfile(ROOT / "requirements-render.txt", skill / "requirements-render.txt")
     (folder / "README.md").write_text("""# Sketch to Furniture — portable plugin
 
-Version 0.2.0. Source and full documentation: https://github.com/plamen911/sketch-to-furniture
+Version 0.2.1. Source and full documentation: https://github.com/plamen911/sketch-to-furniture
 
 The workflow is in [skills/sketch-to-furniture/SKILL.md](skills/sketch-to-furniture/SKILL.md).
 A compatible ChatGPT/plugin host must provide file and Python execution. Packaging does not add tools or remove plan limits.

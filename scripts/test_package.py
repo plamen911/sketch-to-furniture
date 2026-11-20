@@ -13,7 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    archive = ROOT / "dist/sketch-to-furniture-v0.2.0.zip"
+    version = (ROOT / "VERSION").read_text().strip()
+    archive = ROOT / f"dist/sketch-to-furniture-v{version}.zip"
     work = ROOT / "work"
     work.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="package-", dir=work) as tmp:

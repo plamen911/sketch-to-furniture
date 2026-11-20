@@ -19,7 +19,7 @@ from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parents[1]
 EPS = 1e-6
-VERSION = "0.2.0"
+VERSION = (ROOT / "VERSION").read_text().strip()
 STANDARD = {
     "particleboard": [(2800, 2070), (2800, 2100)],
     "mdf": [(2800, 1220), (2800, 2070), (2800, 1300)],
