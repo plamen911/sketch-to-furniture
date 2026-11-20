@@ -23,7 +23,7 @@ Sketch to Furniture preserves that on-site workflow. It helps the maker reach a 
 
 ## Meeting preparation — 24 November 2026
 
-A [provisional workshop profile](references/stoyan-profile.md) allows preliminary work before Stoyan confirms his construction conventions. Defaults remain assumptions and never override explicit project decisions. The public gallery gives each selected, sanitized design a stable phone-friendly URL. Add projects through [the explicit publication registry](references/public-gallery.md); a ChatGPT upload does not automatically publish to GitHub.
+A [provisional workshop profile](references/workshop-profile.md) allows preliminary work before the cabinetmaker confirms his construction conventions. Defaults remain assumptions and never override explicit project decisions. The public gallery gives each selected, sanitized design a stable phone-friendly URL. Add projects through [the explicit publication registry](references/public-gallery.md); a ChatGPT upload does not automatically publish to GitHub.
 
 The meeting will validate construction, edge banding, hardware, cutting settings and the actual Free-account workflow. One reviewed wardrobe is evidence of a working prototype, not arbitrary-sketch manufacturing accuracy.
 

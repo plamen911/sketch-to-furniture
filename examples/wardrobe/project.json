@@ -92,14 +92,25 @@
       "name": "MDF AGT 730A — крем мат",
       "kind": "mdf",
       "thickness_mm": 18,
-      "color": "#ddd4bc",
-      "finish_note": "Условен крем; не е точна мостра AGT 730A",
+      "color": "#e2e0d1",
+      "finish_note": "Цвят от официалната цифрова мостра AGT 730 Soft Touch Cream; артикулът на ROSI е 730A. Екранен ориентир, не измерен физически цвят.",
       "stock": {
         "x_mm": 2800,
         "y_mm": 1220,
         "trim_mm": 20,
         "kerf_mm": 4,
         "primary_axis": "Y"
+      },
+      "color_source": {
+        "manufacturer": "AGT",
+        "manufacturer_code": "730",
+        "supplier_code": "730A",
+        "page_url": "https://www.agtwood.com/products/panel/panel/trendy-panel/soft-touch-cream",
+        "swatch_url": "https://www.agtwood.com/medium/Product/Image/346df789-90b2-44ae-a461-66bdc54401b5",
+        "observed_on": "2026-11-20",
+        "method": "Median RGB of the full flat manufacturer swatch, 630 x 470 px; [226,224,209]. Not sampled from an interior photo; not a spectrophotometric or calibrated measurement.",
+        "color": "#e2e0d1",
+        "mapping_status": "Manufacturer 730 and user-selected ROSI 730A have matching cream-matte descriptions; exact suffix equivalence not independently confirmed."
       }
     },
     "hdf": {

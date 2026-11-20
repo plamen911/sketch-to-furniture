@@ -1,12 +1,12 @@
-# Stoyan's on-site workflow
+# On-site workflow for the cabinetmaker
 
-Stoyan is an experienced cabinetmaker and interior designer. He draws by hand while discussing an idea with the customer. The assistant should help turn that conversation into a reviewable design before he returns to his computer, then support workshop preparation.
+The user may be a cabinetmaker or interior designer who draws by hand while discussing an idea with a customer. The assistant should help turn that conversation into a reviewable design before he returns to his computer, then support workshop preparation.
 
 ## On site: photo to a design the customer can review
 
 1. Read the uploaded photo and the existing conversation. State the interpreted furniture, overall dimensions and visible arrangement in one short Bulgarian sentence. Use written dimension chains, not perspective pixel measurements.
 2. Ask only what changes the geometry, visible finish or material cost. Bundle 1–3 short questions with 2–3 concrete choices each; suggest a reasonable option where appropriate. Use real single-choice controls when supported, otherwise a short numbered list. Never invent a button or claim a selection was recorded without a response.
-3. Reuse answers already given. Do not make Stoyan specify every hinge, drilling point and hidden joint before showing a preliminary exterior/interior view. Record those choices as pending for workshop preparation.
+3. Reuse answers already given. Do not make the cabinetmaker specify every hinge, drilling point and hidden joint before showing a preliminary exterior/interior view. Record those choices as pending for workshop preparation.
 4. Generate the views from the explicit panel model. Return exterior.png and interior.png inline first, with dimensions, finish names and only the assumptions needed to understand what the customer is approving. Offer the interactive viewer as a supplement; a phone chat must not depend on access to a localhost URL on the author's Mac.
 5. Provide a dated material-only estimate. Current user preference: leave labor, installation, profit and final selling price unfilled. Never convert a partial material subtotal into a final quote.
 

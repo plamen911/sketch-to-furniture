@@ -1,0 +1,13 @@
+{
+  "agt-730": {
+    "manufacturer": "AGT",
+    "manufacturer_code": "730",
+    "supplier_code": "730A",
+    "page_url": "https://www.agtwood.com/products/panel/panel/trendy-panel/soft-touch-cream",
+    "swatch_url": "https://www.agtwood.com/medium/Product/Image/346df789-90b2-44ae-a461-66bdc54401b5",
+    "observed_on": "2026-11-20",
+    "method": "Median RGB of the full flat manufacturer swatch, 630 x 470 px; [226,224,209]. Not sampled from an interior photo; not a spectrophotometric or calibrated measurement.",
+    "color": "#e2e0d1",
+    "mapping_status": "Manufacturer 730 and user-selected ROSI 730A have matching cream-matte descriptions; exact suffix equivalence not independently confirmed."
+  }
+}
