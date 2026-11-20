@@ -29,5 +29,7 @@ The portable plugin follows the [official package format](https://developers.ope
 | ChatGPT Desktop | Used to author and invoke local files | Fresh plugin installation |
 | ChatGPT web/mobile | Portable package prepared | Account-level install, Python/Pillow execution and quota behavior |
 | ChatGPT Free | No API key required by project code | End-to-end test on Stoyan's actual Free account |
-| GitHub CI | Workflow prepared locally | Push to the selected repository and observe a passing run |
+| GitHub CI | Source tests, fresh-package execution, distribution update and Pages deployment passed | Recheck after future changes |
 | Installed plugin auto-sync | Workspace route documented | Personal Free route not established |
+
+First verified automated run: https://github.com/plamen911/sketch-to-furniture/actions/runs/44780685324. Public sanitized demo: https://plamen911.github.io/sketch-to-furniture/. Desktop Chrome and a 390 px responsive viewport were checked; a physical phone test remains pending.
