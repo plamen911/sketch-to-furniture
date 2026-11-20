@@ -88,7 +88,7 @@ def estimate(project, boards, catalog):
                     )
                     row["note"] += " Промоция; срокът не е потвърден."
         if provisional:
-            row["note"] += " Примерен избор, не е потвърден от Стоян."
+            row["note"] += " Примерен избор, не е потвърден от мебелиста."
         if row["total_eur"] is None or row.get("stale") or provisional:
             issues.append(label)
         rows.append(row)

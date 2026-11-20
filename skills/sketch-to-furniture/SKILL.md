@@ -9,8 +9,8 @@ description: Reconstruct dimensionally accurate furniture from photographed sket
 Use for a photographed hand sketch of furniture requiring accurate 2D/3D CAD, SketchUp interoperability, materials, bill of parts, board nesting, print-ready A4 cutting plans, and sharing deliverables.
 
 ## Start here
-- For new preliminary projects, read [references/stoyan-profile.md](references/stoyan-profile.md) and its provisional JSON defaults. The user authorized reasonable assumptions for preparation; explicit project answers override them. Record assumptions, never invented confirmations.
-- Read [references/stoyan-workflow.md](references/stoyan-workflow.md) for the photo-first on-site workflow, minimal-choice questions and material-only pricing scope.
+- For new preliminary projects, read [references/workshop-profile.md](references/workshop-profile.md) and its provisional JSON defaults. The user authorized reasonable assumptions for preparation; explicit project answers override them. Record assumptions, never invented confirmations.
+- Read [references/user-workflow.md](references/user-workflow.md) for the photo-first on-site workflow, minimal-choice questions and material-only pricing scope.
 - Read [references/project-format.md](references/project-format.md) before compiling project data. Use [references/client-sketch-style.md](references/client-sketch-style.md) as evidence about this client's drawing conventions, not as universal rules.
 - See [references/platforms-and-sync.md](references/platforms-and-sync.md) for web/desktop/mobile distribution and the unverified Free-plan acceptance target. Never promise that a ZIP installs tools or connects GitHub automatically.
 
@@ -52,6 +52,7 @@ Use for a photographed hand sketch of furniture requiring accurate 2D/3D CAD, Sk
 - Include a readable assumptions/verification file, plus a short SketchUp import guide.
 
 ## Project visualization with selected finishes
+- The current cream base color is sampled from the flat official AGT 730 swatch, with provenance in [references/material-sources.json](references/material-sources.json). It is a digital source, not a calibrated physical measurement. ROSI uses suffix 730A; preserve this distinction. White and HDF remain provisional. Do not imply full PBR textures or exact display color.
 - Include a realistic preview of the furniture using the project's selected colors, materials, edge finishes and visible hardware, alongside the technical drawings and cutting layouts.
 - Build the preview from the same dimensionally verified geometry and part/material assignments used for the CAD model and cut list; keep changes synchronized across these outputs.
 - Provide an exterior perspective with fronts closed and an interior view with fronts open or hidden so the internal layout can be assessed. Add detail views when needed to show a finish or construction choice.

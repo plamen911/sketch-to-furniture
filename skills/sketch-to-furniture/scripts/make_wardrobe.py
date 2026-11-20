@@ -272,8 +272,9 @@ def make_project():
                 name="MDF AGT 730A — крем мат",
                 kind="mdf",
                 thickness_mm=18,
-                color="#ddd4bc",
-                finish_note="Условен крем; не е точна мостра AGT 730A",
+                color="#e2e0d1",
+                color_source=json.loads((ROOT / "references/material-sources.json").read_text())["agt-730"],
+                finish_note="Цвят от официалната цифрова мостра AGT 730 Soft Touch Cream; артикулът на ROSI е 730A. Екранен ориентир, не измерен физически цвят.",
                 stock=dict(
                     x_mm=2800, y_mm=1220, trim_mm=20, kerf_mm=4, primary_axis="Y"
                 ),

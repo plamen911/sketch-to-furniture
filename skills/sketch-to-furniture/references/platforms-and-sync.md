@@ -28,7 +28,7 @@ The portable plugin follows the [official package format](https://developers.ope
 | Browser viewer | Chrome external/interior view tested | Mobile Safari/Chrome and actual phone delivery |
 | ChatGPT Desktop | Used to author and invoke local files | Fresh plugin installation |
 | ChatGPT web/mobile | Portable package prepared | Account-level install, Python/Pillow execution and quota behavior |
-| ChatGPT Free | No API key required by project code | End-to-end test on Stoyan's actual Free account |
+| ChatGPT Free | No API key required by project code | End-to-end test on the cabinetmaker's actual Free account |
 | GitHub CI | Source tests, fresh-package execution, distribution update and Pages deployment passed | Recheck after future changes |
 | Installed plugin auto-sync | Workspace route documented | Personal Free route not established |
 
