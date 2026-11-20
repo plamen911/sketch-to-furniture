@@ -1,6 +1,6 @@
 # Sketch to Furniture — portable plugin
 
-Version 0.2.1. Source and full documentation: https://github.com/plamen911/sketch-to-furniture
+Version 0.3.0. Source and full documentation: https://github.com/plamen911/sketch-to-furniture
 
 The workflow is in [skills/sketch-to-furniture/SKILL.md](skills/sketch-to-furniture/SKILL.md).
 A compatible ChatGPT/plugin host must provide file and Python execution. Packaging does not add tools or remove plan limits.
