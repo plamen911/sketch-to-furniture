@@ -13,6 +13,11 @@ Use for a photographed hand sketch of furniture requiring accurate 2D/3D CAD, Sk
 - Read [references/project-format.md](references/project-format.md) before compiling project data. Use [references/client-sketch-style.md](references/client-sketch-style.md) as evidence about this client's drawing conventions, not as universal rules.
 - See [references/platforms-and-sync.md](references/platforms-and-sync.md) for web/desktop/mobile distribution and the unverified Free-plan acceptance target. Never promise that a ZIP installs tools or connects GitHub automatically.
 
+## Preferred Bulgarian supplier sources
+- Start material, decor, texture, hardware and price research with **Kedar** (https://www.kedar-ood.com/) and **ROSI** (https://rosi.bg/bg), as requested by the user. Consult other sources only when the needed information is missing or requires a manufacturer cross-check.
+- Match exact manufacturer/finish code, thickness, sheet format, edge-band size and hardware SKU. Keep supplier samples and prices attributed to the matching variant; do not substitute a nearby cream or white decor silently.
+- Record the direct product URL and observation date. Missing public prices remain unquoted. A failed page fetch is not evidence of missing stock or price; use the accessible supplier page or report the verification limit.
+
 ## Implementation and project files
 - Maintain source changes only in the user's selected checkout. In a packaged/cloud run, resolve scripts, assets and references relative to this SKILL.md and generate files in the host's writable workspace. Do not claim access to the author's Mac from a phone chat.
 - The assistant reads the sketch and reconciles answers, then writes explicit project JSON. The generator does not perform OCR or autonomously infer joinery.

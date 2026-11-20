@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "sketch-to-furniture",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Turn photographed furniture sketches into reviewable CAD, material previews, cutting plans and sourced material estimates.",
   "author": {
     "name": "Plamen Markov",

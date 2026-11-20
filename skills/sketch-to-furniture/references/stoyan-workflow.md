@@ -18,7 +18,7 @@ Compare the strip-layout candidates. Report achieved board count, yield, useful 
 
 ## Pricing rules
 
-- Browse current Bulgarian supplier pages for the exact product variant, thickness, format and finish. Start with suitable specialist suppliers, such as ROSI and Salex, and cross-check uncertain items. Do not base a current quote on a search snippet when a live page can be read.
+- Browse current Bulgarian supplier pages for the exact product variant, thickness, format and finish. The user-selected preferred sources are Kedar (https://www.kedar-ood.com/) and ROSI (https://rosi.bg/bg). Start there for prices, colors, textures, stock formats and hardware; consult other suppliers or the manufacturer when the needed evidence is missing. Do not base a current quote on a search snippet when a live page can be read.
 - Store supplier, product SKU, direct URL, observed date, unit, price, VAT basis, packaging, purchase increment, availability and any promotion. Unknown promotion expiry remains unknown.
 - Price bought whole sheets according to the current nesting; do not price only the visible panel area or charge the same sheet waste twice. If offcuts are reused from inventory, record their dimensions and assigned value explicitly.
 - Match edge thickness and color exactly. A 0.8 mm cream band is not a verified price for a selected 1 mm band. Hardware quotes must include required plates, clips and companion parts where applicable.
@@ -29,3 +29,5 @@ Compare the strip-layout candidates. Report achieved board count, yield, useful 
 ## Improving from future sketches
 
 For each new design, retain the original privately, a reviewed transcription, the confirmed project data, observed failure, corrected rule and a regression case. Generalize only conventions supported by the evidence; a single wardrobe is not a universal construction standard. Call this iterative skill and evaluation improvement, not model fine-tuning. Do not claim measured time savings, accuracy or customer approval before recording them.
+
+Kedar also lists decor/texture search and cutting, edge-banding, CNC and hardware-drilling services. Service availability does not establish a price; retrieve the relevant price or leave it pending.
