@@ -9,6 +9,7 @@ description: Reconstruct dimensionally accurate furniture from photographed sket
 Use for a photographed hand sketch of furniture requiring accurate 2D/3D CAD, SketchUp interoperability, materials, bill of parts, board nesting, print-ready A4 cutting plans, and sharing deliverables.
 
 ## Start here
+- For new preliminary projects, read [references/stoyan-profile.md](references/stoyan-profile.md) and its provisional JSON defaults. The user authorized reasonable assumptions for preparation; explicit project answers override them. Record assumptions, never invented confirmations.
 - Read [references/stoyan-workflow.md](references/stoyan-workflow.md) for the photo-first on-site workflow, minimal-choice questions and material-only pricing scope.
 - Read [references/project-format.md](references/project-format.md) before compiling project data. Use [references/client-sketch-style.md](references/client-sketch-style.md) as evidence about this client's drawing conventions, not as universal rules.
 - See [references/platforms-and-sync.md](references/platforms-and-sync.md) for web/desktop/mobile distribution and the unverified Free-plan acceptance target. Never promise that a ZIP installs tools or connects GitHub automatically.
@@ -60,7 +61,7 @@ Use for a photographed hand sketch of furniture requiring accurate 2D/3D CAD, Sk
 
 ## Cutting / nesting
 1. Create a manufacturing cut list: unique part ID, name, count, length, width, thickness, material, edge banding sides, grain orientation, allowance, and note.
-2. Ask what '20 mm trimming' means. Default **only when explicitly confirmed**: trim 20 mm from *each* of four board edges. This is board-edge trimming, NOT edge banding.
+2. Ask what '20 mm trimming' means. For preliminary plans the provisional profile may supply 20 mm from each edge, explicitly marked unconfirmed; production requires confirmation. This is board-edge trimming, NOT edge banding.
 3. Set saw kerf (e.g. 4 mm) only as an explicitly declared parameter; maintain separation between pieces.
 4. Board sizes and axes are parameters. Preserve the requested orientation exactly. Example initial orientation: carcass X=2070,Y=2800; fronts X=1200,Y=2800. Rotated: carcass X=2800,Y=2070; fronts X=2800,Y=1200.
 5. 'Cut along Y' means primary rip cuts are parallel to Y. Re-orient nesting/strip segmentation accordingly; changing axis labels alone is insufficient.
@@ -74,7 +75,7 @@ Use for a photographed hand sketch of furniture requiring accurate 2D/3D CAD, Sk
 - Left: 3 shelves, equal clear spacing, 2 stacked drawers each nominally 200 mm tall, left door above drawers.
 - Right: 2 lower shelves, equal clear spacing, hanging zone 1100 mm clear height measured from shelf top to upper boundary underside, right door covering full carcass height above plinth.
 - Plinth nominal 100 mm. Earlier dimensions 1700 + 200 + 200 + 100 = 2200 mm are nominal vertical bands; verify actual construction and gaps before manufacturing.
-- Carcass sheet 2800×2070 mm, front sheet 2800×1200 mm; trim 20 mm each board edge (if confirmed); kerf 4 mm.
+- Carcass sheet 2800×2070 mm, front sheet 2800×1220 mm (latest confirmed choice); trim 20 mm each board edge (if confirmed); kerf 4 mm.
 - Both original and rotated axis layouts have been discussed; use the user's **latest explicit instruction** for current output.
 
 ## Sharing and delivery
@@ -93,12 +94,15 @@ Use for a photographed hand sketch of furniture requiring accurate 2D/3D CAD, Sk
 - Standard thickness choices are **0.8 mm**, **1 mm**, and **2 mm**.
 - When asking the user to specify band thickness, always offer these three as a **selectable list / single-choice control**; do not require free-text entry.
 - For multiple parts, confirm which exact edges are banded separately from thickness. Do not infer banding from the thickness choice alone.
-- Do not assume a default thickness unless the user has explicitly selected one for the current parts.
+- For preliminary projects the user-authorized provisional profile may supply a thickness with explicit assumption status. Final manufacturing still requires exact edge confirmation.
 
 ## Standard stock sheet formats — mandatory selection UI
 - Particleboard (ПДЧ): **2800 × 2070 mm**, **2800 × 2100 mm**.
 - MDF (МДФ): **2800 × 1220 mm**, **2800 × 2070 mm**, **2800 × 1300 mm**.
-- Before generating each new cutting layout, ask the user to choose a stock sheet size from a selectable list (radio/select), filtered by material. Do not require typing these standard sizes.
-- These are nominal stock dimensions, not usable cutting areas: apply independently confirmed perimeter trimming and saw kerf.
+- When a stock format is unresolved for production, ask the user to choose a stock sheet size from a selectable list (radio/select), filtered by material. Do not require typing these standard sizes.
+- A preliminary layout may use the provisional profile without another question; label it unconfirmed. These are nominal stock dimensions, not usable cutting areas: apply independently confirmed perimeter trimming and saw kerf.
 - Keep stock dimensions separate from axis orientation, rotation/grain constraints, and panel thickness.
-- For existing layouts, preserve the explicitly selected stock dimensions until the user confirms a change. The reference wardrobe's former 2800 × 1200 mm MDF sheet is a historical assumption, not one of the newly provided standard MDF options; confirm which standard size to use before recalculating.
+- For existing layouts, preserve the explicitly selected stock dimensions until the user confirms a change. The reference wardrobe's former 2800 × 1200 mm MDF sheet is a historical assumption, not one of the newly provided standard MDF options; use the subsequently confirmed 2800 × 1220 mm for this wardrobe.
+
+## Public project gallery
+See [references/public-gallery.md](references/public-gallery.md). The gallery builds only explicitly listed sanitized projects; a ChatGPT upload does not itself publish anything.

@@ -63,9 +63,9 @@ def build():
     for name in RUNTIME_FILES:
         shutil.copyfile(ROOT / "scripts" / name, skill / "scripts" / name)
     shutil.copyfile(ROOT / "requirements-render.txt", skill / "requirements-render.txt")
-    (folder / "README.md").write_text("""# Sketch to Furniture — portable plugin
+    (folder / "README.md").write_text(f"""# Sketch to Furniture — portable plugin
 
-Version 0.2.1. Source and full documentation: https://github.com/plamen911/sketch-to-furniture
+Version {VERSION}. Source and full documentation: https://github.com/plamen911/sketch-to-furniture
 
 The workflow is in [skills/sketch-to-furniture/SKILL.md](skills/sketch-to-furniture/SKILL.md).
 A compatible ChatGPT/plugin host must provide file and Python execution. Packaging does not add tools or remove plan limits.

@@ -8,6 +8,6 @@ Preserve the split between confirmed decisions and assumptions. Prefer 1–3 sho
 
 Run `python3 scripts/test_furniture.py` and `python3 scripts/test_costing.py` after meaningful engine changes. New behavior needs a meaningful invariant or reviewed regression case; do not add tests that merely repeat generated text.
 
-Keep `projects/` private and ignored. Public examples must be sanitized reconstructions. Do not add source photos, unlisted chat URLs, credentials or the author's local project exports to commits. Do not claim arbitrary-sketch accuracy, measured time savings, manufacturing certification, Free-plan compatibility or installed-plugin auto-sync without corresponding evidence.
+Keep `projects/` private and ignored. Public examples must be sanitized reconstructions. Publish only projects explicitly selected in public-projects.json; the gallery must never scan private projects/. Do not add source photos, unlisted chat URLs, credentials or the author's local project exports to commits. Do not claim arbitrary-sketch accuracy, measured time savings, manufacturing certification, Free-plan compatibility or installed-plugin auto-sync without corresponding evidence.
 
 Use `python3 scripts/package_skill.py` to create the portable distribution. Edit the source files, not generated archives. GitHub is the intended source of versioned releases; automatic tests and packaging are distinct from client installation or synchronization.

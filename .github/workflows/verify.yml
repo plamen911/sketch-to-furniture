@@ -29,6 +29,7 @@ jobs:
         run: |
           python scripts/test_furniture.py
           python scripts/test_costing.py
+          python scripts/test_gallery.py
       - name: Build portable package
         run: python scripts/package_skill.py
       - name: Verify clean-install package execution

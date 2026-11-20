@@ -4,7 +4,7 @@
 
 An AI assistant interprets a photographed sketch and asks focused questions. A Python engine turns the reviewed specification into editable CAD, geometry-based material previews, cutting plans, and a dated material estimate. The same panel data drives the model and the cut list.
 
-**[Open the interactive demo](https://plamen911.github.io/sketch-to-furniture/)** · [Start in ChatGPT](START_HERE.md)
+**[Open the project gallery](https://plamen911.github.io/sketch-to-furniture/)** · [Start in ChatGPT](START_HERE.md)
 
 Built by [Plamen Markov](https://plamen.lynxlake.org/). **Status: working prototype, evaluated on one real wardrobe design.** Broader sketch recognition, phone delivery, and Free-plan execution still need field testing.
 
@@ -20,6 +20,12 @@ Built by [Plamen Markov](https://plamen.lynxlake.org/). **Status: working protot
 A cabinetmaker often develops a design on site, drawing in front of the customer. Recreating that sketch later in CAD delays visual approval and separates the sales conversation from workshop preparation. Missing dimensions, nominal module sizes, edge-band thickness and hardware assumptions can also turn a convincing picture into an incorrect cut list.
 
 Sketch to Furniture preserves that on-site workflow. It helps the maker reach a reviewable design early, while keeping the unresolved manufacturing decisions explicit.
+
+## Meeting preparation — 24 November 2026
+
+A [provisional workshop profile](references/stoyan-profile.md) allows preliminary work before Stoyan confirms his construction conventions. Defaults remain assumptions and never override explicit project decisions. The public gallery gives each selected, sanitized design a stable phone-friendly URL. Add projects through [the explicit publication registry](references/public-gallery.md); a ChatGPT upload does not automatically publish to GitHub.
+
+The meeting will validate construction, edge banding, hardware, cutting settings and the actual Free-account workflow. One reviewed wardrobe is evidence of a working prototype, not arbitrary-sketch manufacturing accuracy.
 
 ## What works today
 
