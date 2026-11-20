@@ -1,0 +1,30 @@
+{
+  "case_id": "wardrobe-001",
+  "scope": "reviewed reconstruction; original client photo remains private",
+  "confirmed": {
+    "overall_width_mm": 1200,
+    "overall_height_mm": 2200,
+    "overall_depth_mm": 600,
+    "nominal_bays_mm": [600, 600],
+    "carcass_thickness_mm": 18,
+    "back_thickness_mm": 3,
+    "left_shelves": 3,
+    "left_drawers": 2,
+    "right_lower_shelves": 2,
+    "hanging_clear_height_mm": 1100,
+    "front_finish": "AGT 730A cream matte; user-corrected code",
+    "front_stock_mm": [2800, 1220],
+    "primary_cut_axis": "Y",
+    "sheet_x_mm": 2800
+  },
+  "must_not_infer": [
+    "600 mm bays are not 600 mm internal clear widths",
+    "1100 mm is not the rail-axis height",
+    "support symbols do not override the written plinth answer",
+    "1700/200 mm nominal bands are not raw front cutting sizes",
+    "a 0.8 mm edge price is not a verified 1 mm edge price",
+    "no HDF stock format means no complete sheet count for HDF",
+    "a materials subtotal is not the final client quote"
+  ],
+  "still_unconfirmed": ["hardware models", "carcass edge bands", "production gaps", "joinery", "drawer-box construction", "stock grain"]
+}

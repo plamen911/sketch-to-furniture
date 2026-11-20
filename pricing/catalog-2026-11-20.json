@@ -1,0 +1,81 @@
+{
+  "checked_on": "2026-11-20",
+  "currency": "EUR",
+  "products": {
+    "white-p0-18": {
+      "supplier": "ROSI",
+      "currency": "EUR",
+      "vat_included": true,
+      "checked_on": "2026-11-20",
+      "evidence": "live_product_page",
+      "terms_url": "https://rosi.bg/bg/obshti-uslovia",
+      "valid_until": null,
+      "sku": "02PR.7701-P00.18.2800.2070",
+      "title": "Бяло ПДЧ P0 гладко 18 mm",
+      "unit": "board",
+      "price_eur": 48.6,
+      "sheet_mm": [
+        2800,
+        2070
+      ],
+      "thickness_mm": 18,
+      "url": "https://rosi.bg/bg/katalog/laminirano-pdc-bialo-gladko-p0/2/25469",
+      "purchase_increment": 1
+    },
+    "agt-730a-18": {
+      "supplier": "ROSI",
+      "currency": "EUR",
+      "vat_included": true,
+      "checked_on": "2026-11-20",
+      "evidence": "live_product_page",
+      "terms_url": "https://rosi.bg/bg/obshti-uslovia",
+      "valid_until": null,
+      "sku": "03GP.730A.18.2800.1220",
+      "title": "AGT 730A крем мат MDF 18 mm",
+      "unit": "board",
+      "price_eur": 61.44,
+      "regular_price_eur": 76.8,
+      "promotion": true,
+      "sheet_mm": [
+        2800,
+        1220
+      ],
+      "thickness_mm": 18,
+      "url": "https://rosi.bg/bg/katalog/mdf-s-pvc-pokritie-krem-mat/2/926",
+      "purchase_increment": 1
+    },
+    "hinge-110-soft": {
+      "supplier": "ROSI",
+      "currency": "EUR",
+      "vat_included": true,
+      "checked_on": "2026-11-20",
+      "evidence": "live_product_page",
+      "terms_url": "https://rosi.bg/bg/obshti-uslovia",
+      "valid_until": null,
+      "sku": "11PR.5222.3D.2.PLUS",
+      "title": "Панта 110° 3D закрит кант, плавно",
+      "unit": "piece",
+      "price_eur": 1.12,
+      "url": "https://rosi.bg/bg/katalog/panta-rosi-plus-110-3d-zk-s-plavno-s-maliek-iegiel-na-aktivirane-i-klips/2/27719",
+      "purchase_increment": 1,
+      "note": "Брой, товароносимост, пластина и съвместимост не са потвърдени."
+    },
+    "slide-500-h35": {
+      "supplier": "ROSI",
+      "currency": "EUR",
+      "vat_included": true,
+      "checked_on": "2026-11-20",
+      "evidence": "live_product_page",
+      "terms_url": "https://rosi.bg/bg/obshti-uslovia",
+      "valid_until": null,
+      "sku": "12SR.9512.500.35",
+      "title": "Телескопичен водач 500 mm H35, плавно",
+      "unit": "pair",
+      "price_eur": 6.54,
+      "url": "https://rosi.bg/bg/katalog/teleskopicen-siecmen-vodac-h35-mm-s-amortisyor/2/2400",
+      "purchase_increment": 1,
+      "note": "Цена за комплект; показана товароносимост 25 kg, конструкцията изисква проверка."
+    }
+  },
+  "note": "Dated observations, not a live feed. Refresh each selected variant before presenting a current estimate."
+}

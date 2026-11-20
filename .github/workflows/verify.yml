@@ -1,0 +1,85 @@
+name: Verify and distribute
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sketch-to-furniture-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install optional renderer
+        run: python -m pip install -r requirements-render.txt
+      - name: Validate geometry and costing
+        run: |
+          python scripts/test_furniture.py
+          python scripts/test_costing.py
+      - name: Build portable package
+        run: python scripts/package_skill.py
+      - name: Verify clean-install package execution
+        run: python scripts/test_package.py
+      - name: Build sanitized public demo
+        run: python scripts/build_demo.py
+      - uses: actions/upload-pages-artifact@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          path: dist/demo
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sketch-to-furniture
+          path: dist/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+
+  distribute:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: sketch-to-furniture
+          path: dist/
+      - name: Update generated distribution branch
+        run: python scripts/publish_distribution.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  demo:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish sanitized demo
+        id: deployment
+        uses: actions/deploy-pages@v4
