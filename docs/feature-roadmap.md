@@ -9,7 +9,13 @@ Reviewed on 2026-11-23. Borrow interaction principles, not vendor code or assets
 - Toggleable model dimensions and optional internal clearances derived from actual panel faces.
 - Selected-part card: finished/raw sizes, thickness and local-edge diagram. Extends our existing part highlighting; useful for workshop checks.
 
-## Recommended next
+## Implemented in 0.5.0
+
+- Source-to-model dimension table with explicit provenance/status and automatic mismatch detection.
+- Revision snapshots and explicit comparison of parts, materials, fittings, stock counts and priced material subtotals.
+- Display-only exploded panel view with within-version numbers and a number-to-part CSV.
+
+## Design rationale for these additions
 
 1. Source-linked dimension review table: written value, interpretation, source and confirmation status. Inspired by [AnyCutlist's review workflow](https://www.anycutlist.com/). Prefer explicit provenance over invented numerical confidence scores.
 2. Revision comparison: show changed dimensions, parts, sheet count and material subtotal between saved builds. [Srezio](https://srez.io/) advertises history and connected downstream updates; our snapshots need explicit regeneration rather than silently stale exports.

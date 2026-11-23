@@ -1031,5 +1031,120 @@
       "end_face": "min",
       "axis": 2
     }
+  ],
+  "intake_review": [
+    {
+      "id": "width",
+      "label": "Обща ширина",
+      "observed_text": "1200",
+      "source": "Скица и последващо уточнение",
+      "interpreted_value": 1200,
+      "unit": "mm",
+      "status": "confirmed",
+      "binding": {
+        "kind": "overall",
+        "axis": 0
+      }
+    },
+    {
+      "id": "height",
+      "label": "Обща височина",
+      "observed_text": "2200",
+      "source": "Скица и размерна верига 100 + 200 + 200 + 1700",
+      "interpreted_value": 2200,
+      "unit": "mm",
+      "status": "confirmed",
+      "binding": {
+        "kind": "overall",
+        "axis": 2
+      }
+    },
+    {
+      "id": "depth",
+      "label": "Обща дълбочина",
+      "observed_text": "600",
+      "source": "Скица; включването на фронта и гърба е допускане",
+      "interpreted_value": 600,
+      "unit": "mm",
+      "status": "assumed",
+      "binding": {
+        "kind": "overall",
+        "axis": 1
+      }
+    },
+    {
+      "id": "left-shelves",
+      "label": "Леви рафтове",
+      "observed_text": "Пунктирни линии",
+      "source": "Брой, уточнен в разговора",
+      "interpreted_value": 3,
+      "unit": "бр.",
+      "status": "confirmed",
+      "binding": {
+        "kind": "part_count",
+        "ids": [
+          "SHELF_L1",
+          "SHELF_L2",
+          "SHELF_L3"
+        ]
+      }
+    },
+    {
+      "id": "right-shelves",
+      "label": "Десни долни рафтове",
+      "observed_text": "Пунктирни линии",
+      "source": "Брой, уточнен в разговора",
+      "interpreted_value": 2,
+      "unit": "бр.",
+      "status": "confirmed",
+      "binding": {
+        "kind": "part_count",
+        "ids": [
+          "SHELF_R1",
+          "SHELF_R2"
+        ]
+      }
+    },
+    {
+      "id": "hanging-height",
+      "label": "Светла зона за закачалки",
+      "observed_text": "Няма отделна числова кота на снимката",
+      "source": "Последващо уточнение: от горния рафт до долната страна на тавана",
+      "interpreted_value": 1100,
+      "unit": "mm",
+      "status": "confirmed",
+      "binding": {
+        "kind": "clearance",
+        "id": "hanging-clear"
+      }
+    },
+    {
+      "id": "carcass-finish",
+      "label": "Декор на корпуса",
+      "observed_text": "ПДЧ сонома",
+      "source": "Промяна в разговора: избрано бяло вместо сонома",
+      "interpreted_value": "Бяло ПДЧ",
+      "unit": "",
+      "status": "confirmed",
+      "binding": {
+        "kind": "material",
+        "material": "white",
+        "field": "name"
+      }
+    },
+    {
+      "id": "back-thickness",
+      "label": "Дебелина на гърба",
+      "observed_text": "Не е посочена",
+      "source": "Последващо уточнение: HDF 3 mm",
+      "interpreted_value": 3,
+      "unit": "mm",
+      "status": "confirmed",
+      "binding": {
+        "kind": "material",
+        "material": "hdf",
+        "field": "thickness_mm"
+      }
+    }
   ]
 }

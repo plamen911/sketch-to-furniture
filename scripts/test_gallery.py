@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from build_demo import entries
+from build_demo import entries, build
 
 
 class GalleryTests(unittest.TestCase):
@@ -34,6 +34,12 @@ class GalleryTests(unittest.TestCase):
         (self.root / 'private.json').write_text('{}')
         self.write([dict(self.item, source='examples/../private.json')])
         with self.assertRaises(ValueError): entries(self.root)
+
+    def test_comparison_cannot_publish_private_snapshot(self):
+        (self.root / 'private.json').write_text('{}')
+        self.write([dict(self.item, compare_to='examples/../private.json')])
+        with self.assertRaisesRegex(ValueError, 'Public comparison'):
+            build(self.root)
 
     def test_provenance_rejected(self):
         self.write([self.item])

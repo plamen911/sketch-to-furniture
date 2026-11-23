@@ -73,3 +73,17 @@ Optional `dimension_annotations` items contain `id`, `label`, `start_part`, `sta
 Example: `{"id":"hanging-clear","label":"Светло за закачалки","start_part":"SHELF_R2","start_face":"max","end_part":"TOP","end_face":"min","axis":2}` measures the clear height from the shelf top to the top-panel underside. These annotations display in the interior view. Overall annotations use design bounds (or panel bounds when absent); selected-part dimensions are finished X/Y/Z envelopes, distinct from band-adjusted raw cuts.
 
 `review.json` records prepared/partial/pending stages and unresolved assumptions. It is generated after successful exports. Neither the stage count nor an empty assumptions array is manufacturing approval. The viewer is a static build snapshot; changing choices requires regeneration.
+
+## Source-to-model review table
+
+`intake_review` is a list of records with `id`, `label`, `observed_text`, `source`, `interpreted_value` (text or a finite number), `unit`, `status` (`confirmed`, `assumed`, `unclear`) and `binding`. Use `confirmed` only when supported by the current sketch/conversation, never because a previous assistant guessed it. Distinguish a handwritten material from a later requested replacement.
+
+Bindings: `{"kind":"overall","axis":0}` (0=X,1=Y,2=Z), `{"kind":"clearance","id":"hanging-clear"}`, `{"kind":"material","material":"white","field":"name"}` (`name`, `thickness_mm`, `color`), or `{"kind":"part_count","ids":["SHELF_L1","SHELF_L2","SHELF_L3"]}`. The generated review compares the interpretation with the actual value; mismatch overrides the displayed status to `conflict`. Geometry changes require regeneration; this is not an OCR or confidence-scoring algorithm.
+
+## Revisions and exploded views
+
+Every output contains `revision.json`, a self-contained manufacturing-relevant snapshot with a SHA-256 integrity check. Use `python3 scripts/furniture.py project.json --out <fresh-output> --compare-to <previous revision.json or output folder>` for `comparison.json` and its viewer tab. Only explicit snapshots are read; no conversation history is scraped. Hashes detect accidental changes and do not authenticate authors or prove approval. Prices compare the dated priced subtotal only; missing estimates remain null.
+
+The public gallery accepts an optional `compare_to` path inside `examples/`. Its initial baseline is the actual sanitized 0.4.0 demo, not a fabricated design change.
+
+`review.json` also records display-only explosion offsets and 1-based panel numbers. `assembly-parts.csv` maps numbers to canonical part IDs. Numbers are scoped to a generated version, not a stable identifier across additions/removals. Production geometry is unchanged. The exploded viewer hides conditional fittings and shows the panels schematically; it is not a validated assembly trajectory.

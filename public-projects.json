@@ -3,6 +3,7 @@
     "id": "wardrobe-001",
     "title": "Гардероб с две чекмеджета",
     "source": "examples/wardrobe/project.json",
-    "summary": "1200 × 2200 × 600 mm · Бяло ПДЧ и MDF AGT 730A · Предварителен проект"
+    "summary": "1200 × 2200 × 600 mm · Бяло ПДЧ и MDF AGT 730A · Предварителен проект",
+    "compare_to": "examples/wardrobe/revisions/v0.4.0.json"
   }
 ]

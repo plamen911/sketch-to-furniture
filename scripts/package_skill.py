@@ -13,6 +13,8 @@ VERSION = (ROOT / "VERSION").read_text().strip()
 RUNTIME_FILES = [
     "furniture.py",
     "project_review.py",
+    "project_history.py",
+    "test_project_history.py",
     "test_project_review.py",
     "costing.py",
     "render_preview.py",

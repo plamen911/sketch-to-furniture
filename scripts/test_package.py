@@ -37,6 +37,12 @@ def main():
             check=True,
             cwd=folder,
         )
+        subprocess.run([sys.executable, str(skill / "scripts/furniture.py"),
+                        str(skill / "examples/wardrobe/project.json"), "--out", str(folder / "next-result"),
+                        "--compare-to", str(output)], check=True, cwd=folder)
+        comparison = json.loads((folder / "next-result/comparison.json").read_text())
+        assert comparison["changes"]["parts"] == {"added": [], "removed": [], "changed": []}
+        assert comparison["cost"]["delta_priced_subtotal_eur"] == 0
         report = json.loads((output / "validation.json").read_text())
         assert report["part_count"] == 28 and report["board_count"] == 4
         assert (output / "index.html").is_file()

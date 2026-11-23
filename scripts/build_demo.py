@@ -51,7 +51,12 @@ def build(root=ROOT):
             source = Path(tmp) / f'{pid}.json'
             source.write_text(json.dumps(project, ensure_ascii=False, indent=2))
             output = staging / 'projects' / pid
-            furniture.build(source, output)
+            baseline = None
+            if item.get("compare_to"):
+                baseline = (root / item["compare_to"]).resolve()
+                if not baseline.is_relative_to((root / "examples").resolve()) or not baseline.is_file():
+                    raise ValueError("Public comparison must use an explicit example snapshot")
+            furniture.build(source, output, baseline)
             image = f'<img src="projects/{pid}/exterior.png" alt="Външен изглед" loading="lazy">' if (output / 'exterior.png').exists() else ''
             cards.append(f'<a class="card" href="projects/{pid}/"><div class="image">{image}</div><div class="copy"><span>ПРЕДВАРИТЕЛЕН ПРОЕКТ</span><h2>{html.escape(item["title"])}</h2><p>{html.escape(item["summary"])}</p><strong>Разгледай проекта →</strong></div></a>')
         page = '''<!doctype html><html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sketch to Furniture · Проекти</title><style>

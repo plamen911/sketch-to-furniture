@@ -3,12 +3,35 @@
 import copy
 import unittest
 from make_wardrobe import make_project
-from project_review import dimension_annotations, review_metadata
+from project_review import dimension_annotations, review_metadata, intake_rows, exploded_parts
 
 
 class ReviewTests(unittest.TestCase):
     def setUp(self):
         self.p = make_project()
+
+    def test_transcription_conflict_never_inherits_confirmation(self):
+        rows = intake_rows(self.p)
+        self.assertEqual(rows[0]['status'], 'confirmed')
+        self.p['intake_review'][0]['interpreted_value'] = 1300
+        row = intake_rows(self.p)[0]
+        self.assertEqual(row['model_value'], 1200)
+        self.assertEqual(row['declared_status'], 'confirmed')
+        self.assertEqual(row['status'], 'conflict')
+
+    def test_unclear_bindings_and_numeric_values_are_rejected(self):
+        for patch in ({'status':'approved'}, {'interpreted_value':float('nan')}, {'binding':{'kind':'unknown'}}):
+            p=copy.deepcopy(self.p);p['intake_review'][0].update(patch)
+            with self.assertRaises(ValueError): intake_rows(p)
+
+    def test_explosion_is_display_only_and_numbered(self):
+        before = copy.deepcopy(self.p)
+        exploded = exploded_parts(self.p)
+        self.assertEqual(self.p, before)
+        self.assertEqual(len(exploded), len(self.p['parts']))
+        self.assertEqual([p['number'] for p in exploded], list(range(1,len(exploded)+1)))
+        self.assertEqual({p['part_id'] for p in exploded}, {p['id'] for p in self.p['parts']})
+        self.assertTrue(all(any(abs(v)>0 for v in p['offset_mm']) for p in exploded))
 
     def test_clear_dimension_follows_real_shelf_geometry(self):
         self.assertEqual(dimension_annotations(self.p)[0]['value_mm'], 1100)
