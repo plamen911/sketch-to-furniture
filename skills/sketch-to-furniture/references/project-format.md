@@ -65,3 +65,11 @@ A fitting requires unique `id`, `name`, `origin_mm`, `size_mm`, and `color`. `sh
 - `validation.json`: checks, actual bounds, excluded parts, warnings and project assumptions. `manifest.json`: file checksums. `package.zip`: generated outputs; the original image is included when source_image is specified.
 
 The deterministic strip heuristic produces a feasible arrangement with kerf clearance; it is not a nesting optimizer. It does not output CNC toolpaths or an execution order for every cut. Finished sizes, offsets and raw sizes come from one explicit panel model; assemblies with curved/angled panels, milled profiles and nonrectangular pieces are outside v0.2.
+
+## Model-linked dimension annotations
+
+Optional `dimension_annotations` items contain `id`, `label`, `start_part`, `start_face` (`min`/`max`), `end_part`, `end_face`, and `axis` (0=X, 1=Y, 2=Z). The measured interval runs from the selected start face to the selected end face on that axis; it must be positive. The generator derives coordinates and distance from actual part positions/sizes. Never store a separate guessed numeric label.
+
+Example: `{"id":"hanging-clear","label":"Светло за закачалки","start_part":"SHELF_R2","start_face":"max","end_part":"TOP","end_face":"min","axis":2}` measures the clear height from the shelf top to the top-panel underside. These annotations display in the interior view. Overall annotations use design bounds (or panel bounds when absent); selected-part dimensions are finished X/Y/Z envelopes, distinct from band-adjusted raw cuts.
+
+`review.json` records prepared/partial/pending stages and unresolved assumptions. It is generated after successful exports. Neither the stage count nor an empty assumptions array is manufacturing approval. The viewer is a static build snapshot; changing choices requires regeneration.

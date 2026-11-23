@@ -1020,5 +1020,16 @@
       "group": "hardware",
       "hide_with_fronts": true
     }
+  ],
+  "dimension_annotations": [
+    {
+      "id": "hanging-clear",
+      "label": "Светло за закачалки",
+      "start_part": "SHELF_R2",
+      "start_face": "max",
+      "end_part": "TOP",
+      "end_face": "min",
+      "axis": 2
+    }
   ]
 }
