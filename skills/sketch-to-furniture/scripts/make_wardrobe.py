@@ -219,7 +219,8 @@ def make_project():
             as_of_date="2026-11-20",
             max_price_age_days=7,
             material_scope_complete=False,
-            dimension_annotations=[dict(id="hanging-clear", label="Светло за закачалки", start_part="SHELF_R2", start_face="max", end_part="TOP", end_face="min", axis=2)],
+            intake_review=json.loads((ROOT / "examples/wardrobe/project.json").read_text()).get("intake_review", []),
+        dimension_annotations=[dict(id="hanging-clear", label="Светло за закачалки", start_part="SHELF_R2", start_face="max", end_part="TOP", end_face="min", axis=2)],
         materials={
                 "white": dict(product_id="white-p0-18", confirmed=False),
                 "cream": dict(product_id="agt-730a-18", confirmed=True),
@@ -258,6 +259,7 @@ def make_project():
                 ),
             ],
         ),
+        intake_review=json.loads((ROOT / "examples/wardrobe/project.json").read_text()).get("intake_review", []),
         dimension_annotations=[dict(id="hanging-clear", label="Светло за закачалки", start_part="SHELF_R2", start_face="max", end_part="TOP", end_face="min", axis=2)],
         materials={
             "white": dict(

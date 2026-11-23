@@ -1,0 +1,900 @@
+{
+  "schema_version": 1,
+  "kind": "furniture-revision",
+  "name": "Гардероб с две чекмеджета",
+  "generator_version": "0.4.0",
+  "parts": {
+    "SIDE_L": {
+      "name": "Лява страница",
+      "material": "white",
+      "origin_mm": [
+        0.0,
+        20.0,
+        100.0
+      ],
+      "size_mm": [
+        18.0,
+        577.0,
+        2100.0
+      ],
+      "panel_axes": [
+        1,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "carcass"
+    },
+    "SIDE_R": {
+      "name": "Дясна страница",
+      "material": "white",
+      "origin_mm": [
+        1182.0,
+        20.0,
+        100.0
+      ],
+      "size_mm": [
+        18.0,
+        577.0,
+        2100.0
+      ],
+      "panel_axes": [
+        1,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "carcass"
+    },
+    "BOTTOM": {
+      "name": "Дъно",
+      "material": "white",
+      "origin_mm": [
+        18.0,
+        20.0,
+        100.0
+      ],
+      "size_mm": [
+        1164.0,
+        577.0,
+        18.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "carcass"
+    },
+    "TOP": {
+      "name": "Таван",
+      "material": "white",
+      "origin_mm": [
+        18.0,
+        20.0,
+        2182.0
+      ],
+      "size_mm": [
+        1164.0,
+        577.0,
+        18.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "carcass"
+    },
+    "DIVIDER": {
+      "name": "Средна преграда",
+      "material": "white",
+      "origin_mm": [
+        591.0,
+        20.0,
+        118.0
+      ],
+      "size_mm": [
+        18.0,
+        577.0,
+        2064.0
+      ],
+      "panel_axes": [
+        1,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "carcass"
+    },
+    "DRAWER_TOP": {
+      "name": "Плот над чекмеджетата",
+      "material": "white",
+      "origin_mm": [
+        18.0,
+        20.0,
+        500.0
+      ],
+      "size_mm": [
+        573.0,
+        577.0,
+        18.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "shelf"
+    },
+    "SHELF_L1": {
+      "name": "Ляв рафт 1",
+      "material": "white",
+      "origin_mm": [
+        18.0,
+        30.0,
+        920.5
+      ],
+      "size_mm": [
+        573.0,
+        557.0,
+        18.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "shelf"
+    },
+    "SHELF_L2": {
+      "name": "Ляв рафт 2",
+      "material": "white",
+      "origin_mm": [
+        18.0,
+        30.0,
+        1341.0
+      ],
+      "size_mm": [
+        573.0,
+        557.0,
+        18.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "shelf"
+    },
+    "SHELF_L3": {
+      "name": "Ляв рафт 3",
+      "material": "white",
+      "origin_mm": [
+        18.0,
+        30.0,
+        1761.5
+      ],
+      "size_mm": [
+        573.0,
+        557.0,
+        18.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "shelf"
+    },
+    "SHELF_R1": {
+      "name": "Десен долен рафт",
+      "material": "white",
+      "origin_mm": [
+        609.0,
+        30.0,
+        582.0
+      ],
+      "size_mm": [
+        573.0,
+        557.0,
+        18.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "shelf"
+    },
+    "SHELF_R2": {
+      "name": "Десен горен рафт",
+      "material": "white",
+      "origin_mm": [
+        609.0,
+        30.0,
+        1064.0
+      ],
+      "size_mm": [
+        573.0,
+        557.0,
+        18.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "shelf"
+    },
+    "DOOR_L": {
+      "name": "Лява врата",
+      "material": "cream",
+      "origin_mm": [
+        2.0,
+        0.0,
+        502.0
+      ],
+      "size_mm": [
+        597.0,
+        18.0,
+        1696.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 1,
+        "u1": 1,
+        "v0": 1,
+        "v1": 1
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "front"
+    },
+    "DOOR_R": {
+      "name": "Дясна врата",
+      "material": "cream",
+      "origin_mm": [
+        601.0,
+        0.0,
+        102.0
+      ],
+      "size_mm": [
+        597.0,
+        18.0,
+        2096.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 1,
+        "u1": 1,
+        "v0": 1,
+        "v1": 1
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "front"
+    },
+    "FRONT_D1": {
+      "name": "Чело чекмедже 1",
+      "material": "cream",
+      "origin_mm": [
+        2.0,
+        0.0,
+        102.0
+      ],
+      "size_mm": [
+        597.0,
+        18.0,
+        198.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 1,
+        "u1": 1,
+        "v0": 1,
+        "v1": 1
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "front"
+    },
+    "D1_SIDE_L": {
+      "name": "Чекмедже 1 — лява страна",
+      "material": "white",
+      "origin_mm": [
+        31.0,
+        40.0,
+        141.0
+      ],
+      "size_mm": [
+        18.0,
+        500.0,
+        140.0
+      ],
+      "panel_axes": [
+        1,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "D1_SIDE_R": {
+      "name": "Чекмедже 1 — дясна страна",
+      "material": "white",
+      "origin_mm": [
+        560.0,
+        40.0,
+        141.0
+      ],
+      "size_mm": [
+        18.0,
+        500.0,
+        140.0
+      ],
+      "panel_axes": [
+        1,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "D1_INNER_F": {
+      "name": "Чекмедже 1 — предна стена",
+      "material": "white",
+      "origin_mm": [
+        49.0,
+        40.0,
+        141.0
+      ],
+      "size_mm": [
+        511.0,
+        18.0,
+        140.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "D1_INNER_B": {
+      "name": "Чекмедже 1 — задна стена",
+      "material": "white",
+      "origin_mm": [
+        49.0,
+        522.0,
+        141.0
+      ],
+      "size_mm": [
+        511.0,
+        18.0,
+        140.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "D1_BOTTOM": {
+      "name": "Чекмедже 1 — дъно",
+      "material": "hdf",
+      "origin_mm": [
+        31.0,
+        40.0,
+        138.0
+      ],
+      "size_mm": [
+        547.0,
+        500.0,
+        3.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "FRONT_D2": {
+      "name": "Чело чекмедже 2",
+      "material": "cream",
+      "origin_mm": [
+        2.0,
+        0.0,
+        302.0
+      ],
+      "size_mm": [
+        597.0,
+        18.0,
+        198.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 1,
+        "u1": 1,
+        "v0": 1,
+        "v1": 1
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "front"
+    },
+    "D2_SIDE_L": {
+      "name": "Чекмедже 2 — лява страна",
+      "material": "white",
+      "origin_mm": [
+        31.0,
+        40.0,
+        341.0
+      ],
+      "size_mm": [
+        18.0,
+        500.0,
+        140.0
+      ],
+      "panel_axes": [
+        1,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "D2_SIDE_R": {
+      "name": "Чекмедже 2 — дясна страна",
+      "material": "white",
+      "origin_mm": [
+        560.0,
+        40.0,
+        341.0
+      ],
+      "size_mm": [
+        18.0,
+        500.0,
+        140.0
+      ],
+      "panel_axes": [
+        1,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "D2_INNER_F": {
+      "name": "Чекмедже 2 — предна стена",
+      "material": "white",
+      "origin_mm": [
+        49.0,
+        40.0,
+        341.0
+      ],
+      "size_mm": [
+        511.0,
+        18.0,
+        140.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "D2_INNER_B": {
+      "name": "Чекмедже 2 — задна стена",
+      "material": "white",
+      "origin_mm": [
+        49.0,
+        522.0,
+        341.0
+      ],
+      "size_mm": [
+        511.0,
+        18.0,
+        140.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "D2_BOTTOM": {
+      "name": "Чекмедже 2 — дъно",
+      "material": "hdf",
+      "origin_mm": [
+        31.0,
+        40.0,
+        338.0
+      ],
+      "size_mm": [
+        547.0,
+        500.0,
+        3.0
+      ],
+      "panel_axes": [
+        0,
+        1
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "drawer"
+    },
+    "BACK": {
+      "name": "Гръб HDF",
+      "material": "hdf",
+      "origin_mm": [
+        0.0,
+        597.0,
+        100.0
+      ],
+      "size_mm": [
+        1200.0,
+        3.0,
+        2100.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "back"
+    },
+    "PLINTH_F": {
+      "name": "Преден цокъл",
+      "material": "white",
+      "origin_mm": [
+        18.0,
+        70.0,
+        0.0
+      ],
+      "size_mm": [
+        1164.0,
+        18.0,
+        100.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "plinth"
+    },
+    "PLINTH_B": {
+      "name": "Задна цокълна опора",
+      "material": "white",
+      "origin_mm": [
+        18.0,
+        540.0,
+        0.0
+      ],
+      "size_mm": [
+        1164.0,
+        18.0,
+        100.0
+      ],
+      "panel_axes": [
+        0,
+        2
+      ],
+      "bands_mm": {
+        "u0": 0,
+        "u1": 0,
+        "v0": 0,
+        "v1": 0
+      },
+      "grain": "none",
+      "allow_rotation": true,
+      "group": "plinth"
+    }
+  },
+  "materials": {
+    "white": {
+      "name": "Бяло ПДЧ",
+      "kind": "particleboard",
+      "thickness_mm": 18,
+      "color": "#f0f0ec",
+      "stock": {
+        "x_mm": 2800,
+        "y_mm": 2070,
+        "trim_mm": 20,
+        "kerf_mm": 4,
+        "primary_axis": "Y"
+      }
+    },
+    "cream": {
+      "name": "MDF AGT 730A — крем мат",
+      "kind": "mdf",
+      "thickness_mm": 18,
+      "color": "#e2e0d1",
+      "stock": {
+        "x_mm": 2800,
+        "y_mm": 1220,
+        "trim_mm": 20,
+        "kerf_mm": 4,
+        "primary_axis": "Y"
+      }
+    },
+    "hdf": {
+      "name": "Бял HDF",
+      "kind": "hdf",
+      "thickness_mm": 3,
+      "color": "#e4e6e2",
+      "stock": null
+    }
+  },
+  "fittings": {
+    "RAIL": {
+      "id": "RAIL",
+      "name": "Лост за дрехи — условна позиция",
+      "origin_mm": [
+        609.0,
+        295.0,
+        2080.0
+      ],
+      "size_mm": [
+        573.0,
+        25.0,
+        25.0
+      ],
+      "shape": "cylinder",
+      "axis": 0,
+      "color": "#a5adb1",
+      "group": "hardware"
+    },
+    "HANDLE_L": {
+      "id": "HANDLE_L",
+      "name": "Дръжка — условен модел",
+      "origin_mm": [
+        562.0,
+        -22.0,
+        1280.0
+      ],
+      "size_mm": [
+        9.0,
+        22.0,
+        128.0
+      ],
+      "color": "#69767d",
+      "group": "hardware",
+      "hide_with_fronts": true
+    },
+    "HANDLE_R": {
+      "id": "HANDLE_R",
+      "name": "Дръжка — условен модел",
+      "origin_mm": [
+        630.0,
+        -22.0,
+        1280.0
+      ],
+      "size_mm": [
+        9.0,
+        22.0,
+        128.0
+      ],
+      "color": "#69767d",
+      "group": "hardware",
+      "hide_with_fronts": true
+    },
+    "HANDLE_D1": {
+      "id": "HANDLE_D1",
+      "name": "Дръжка чекмедже — условен модел",
+      "origin_mm": [
+        235.0,
+        -22.0,
+        195.0
+      ],
+      "size_mm": [
+        128.0,
+        22.0,
+        9.0
+      ],
+      "color": "#69767d",
+      "group": "hardware",
+      "hide_with_fronts": true
+    },
+    "HANDLE_D2": {
+      "id": "HANDLE_D2",
+      "name": "Дръжка чекмедже — условен модел",
+      "origin_mm": [
+        235.0,
+        -22.0,
+        395.0
+      ],
+      "size_mm": [
+        128.0,
+        22.0,
+        9.0
+      ],
+      "color": "#69767d",
+      "group": "hardware",
+      "hide_with_fronts": true
+    }
+  },
+  "board_counts": {
+    "white": 2,
+    "cream": 2
+  },
+  "cost": {
+    "priced_subtotal_eur": 233.16,
+    "status": "incomplete",
+    "as_of_date": "2026-11-20",
+    "basis_sha256": "49babccae5e8a7eca03f75da83b2c388a1a61fd919eb2d382961b9412efe1e1a"
+  },
+  "decisions_sha256": "e5a8fe0ec5de8be19310a1b46b65170b6951f1039db86528017990f3ec743dbd",
+  "project_sha256": "d4bf47772f3df375273e63243acb84a5be2494b0c1d88aa3b1bb7bec01615a35",
+  "snapshot_sha256": "3a4a91094d449507bf3d2d317ce43c3e8f5bc214c85fa80949c10292ab41f6cb"
+}

@@ -1037,7 +1037,7 @@ def dxf_layout(boards, out):
     (out / "cutting.dxf").write_text("\n".join(lines) + "\n")
 
 
-def build(project_path, output):
+def build(project_path, output, compare_to=None):
     project_path = Path(project_path).resolve()
     output = Path(output).resolve()
     if output.exists():
@@ -1045,6 +1045,9 @@ def build(project_path, output):
             f"Output already exists: {output}. Choose a new folder; existing files are never overwritten."
         )
     project = validate_project(json.loads(project_path.read_text()))
+    from project_history import load_snapshot, snapshot, compare
+
+    previous = load_snapshot(compare_to) if compare_to else None
     boards = nest(project)
     output.parent.mkdir(parents=True, exist_ok=True)
     staging = Path(tempfile.mkdtemp(prefix=".furniture-", dir=output.parent))
@@ -1084,6 +1087,11 @@ def build(project_path, output):
 
             catalog = json.loads((ROOT / "pricing/catalog-2026-11-20.json").read_text())
             cost = write_estimate(project, boards, catalog, staging)
+        revision = snapshot(project, boards, cost, VERSION)
+        comparison = compare(previous, revision) if previous else None
+        (staging / "revision.json").write_text(json.dumps(revision, ensure_ascii=False, indent=2))
+        if comparison:
+            (staging / "comparison.json").write_text(json.dumps(comparison, ensure_ascii=False, indent=2))
         png_previews = False
         try:
             from render_preview import render_both
@@ -1095,6 +1103,10 @@ def build(project_path, output):
         from project_review import review_metadata
 
         review = review_metadata(project, boards, cost, png_previews)
+        with (staging / "assembly-parts.csv").open("w", encoding="utf-8-sig", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=["number", "part_id", "name"])
+            writer.writeheader()
+            writer.writerows({k: item[k] for k in ("number", "part_id", "name")} for item in review["exploded"])
         (staging / "review.json").write_text(json.dumps(review, ensure_ascii=False, indent=2))
         payload = (
             json.dumps(
@@ -1104,6 +1116,7 @@ def build(project_path, output):
                     "version": VERSION,
                     "cost": cost,
                     "review": review,
+                    "comparison": comparison,
                 },
                 ensure_ascii=False,
             )
@@ -1199,9 +1212,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("project", type=Path)
     parser.add_argument("--out", required=True, type=Path)
+    parser.add_argument("--compare-to", type=Path, help="A previous revision.json file or output folder containing it")
     args = parser.parse_args()
     try:
-        result = build(args.project, args.out)
+        result = build(args.project, args.out, args.compare_to)
         print(
             json.dumps(
                 {
