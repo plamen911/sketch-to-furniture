@@ -137,3 +137,7 @@ Next priorities are real phone/Free-account acceptance tests, more sketch types,
 MIT; see [LICENSE](LICENSE). Supplier prices and product references are attributed observations, not endorsements or a guarantee of availability. Original customer drawings are not included in the public package.
 
 [Plamen Markov — portfolio](https://plamen.lynxlake.org/) · [GitHub](https://github.com/plamen911)
+
+## Competitive evaluation
+
+[23 November 2026 comparison](docs/competitor-evaluation-2026-11-23.md) records observed access, one incomplete competitor run, and the local known-case baseline. It deliberately separates vendor claims from verified outputs and does not claim competitive superiority. See the [reproducible two-stage protocol](docs/competitor-test-protocol.md) for the next field session.
