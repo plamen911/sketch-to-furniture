@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 VERSION = (ROOT / "VERSION").read_text().strip()
 RUNTIME_FILES = [
     "furniture.py",
+    "project_review.py",
+    "test_project_review.py",
     "costing.py",
     "render_preview.py",
     "make_wardrobe.py",

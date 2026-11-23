@@ -40,6 +40,10 @@ def main():
         report = json.loads((output / "validation.json").read_text())
         assert report["part_count"] == 28 and report["board_count"] == 4
         assert (output / "index.html").is_file()
+        review = json.loads((output / "review.json").read_text())
+        assert review["production_approved"] is False
+        assert review["dimensions"][0]["value_mm"] == 1100
+        assert next(s for s in review["stages"] if s["id"] == "nesting")["status"] == "partial"
         assert (
             json.loads((output / "materials-cost.json").read_text())["client_total_eur"]
             is None

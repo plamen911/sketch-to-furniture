@@ -1092,6 +1092,10 @@ def build(project_path, output):
         else:
             render_both(project, staging)
             png_previews = True
+        from project_review import review_metadata
+
+        review = review_metadata(project, boards, cost, png_previews)
+        (staging / "review.json").write_text(json.dumps(review, ensure_ascii=False, indent=2))
         payload = (
             json.dumps(
                 {
@@ -1099,6 +1103,7 @@ def build(project_path, output):
                     "boards": boards,
                     "version": VERSION,
                     "cost": cost,
+                    "review": review,
                 },
                 ensure_ascii=False,
             )

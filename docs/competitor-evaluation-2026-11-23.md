@@ -2,7 +2,7 @@
 
 ## Outcome
 
-This session did not establish a winner. It verified access restrictions, generated the known local reference and attempted one Srezio modeling run plus a follow-up photo submission. No competitor manufacturing output was obtained, so dimensional accuracy, nesting quality and end-to-end speed cannot be ranked.
+This session did not establish a winner. It verified access restrictions, generated the known local reference and attempted one Srezio modeling run plus a follow-up photo submission. Later user-supplied text and screenshots show a Srezio transcription and a preliminary model after clarifications. No competitor manufacturing export was obtained, so dimensional accuracy, nesting quality and end-to-end speed cannot be ranked.
 
 | Product / stage | Observed result | Scope and limitation |
 | --- | --- | --- |
@@ -43,3 +43,7 @@ Sending produced the visible status `Not sent`. One immediate retry did not reso
 - [Coobic design entry](https://coobic.co/design): sign-in requirement observed directly.
 
 Prices and access rules can change. All observations are bounded to this session on 23 November 2026. No performance score or broad reliability conclusion is justified by these results.
+
+## Later manual test evidence supplied by the user
+
+The user supplied a Srezio transcription and screenshots of a generated wardrobe. This updates the earlier automated-session limitation: Srezio did produce a preliminary model in the user's separate manual session. Its first transcription read the main width/depth, asked eight clarification questions, and mixed visible facts with uncertain shelf counts and suggested back thicknesses. The model screenshots show overall dimension labels, internal panels, visible workflow stages and a separate assumptions control. A credit-limit message interrupted further assistant work; a screenshot also showed a 0/5 task counter despite visible geometry. These are user-supplied observations, not downloaded model/cut-list measurements. Internal dimensions, panel thicknesses, edging and production exports remain unverified. The manual result must not be conflated with our earlier stopped or unsent requests.
